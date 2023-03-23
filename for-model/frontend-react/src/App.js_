@@ -73,30 +73,34 @@ class App extends React.Component {
 					<Stack className="app-stack-style"
 						direction="row"
 					>
-                        {{#boundedContexts}}
-                        {{#aggregates}}
-						<Card className="app-card-style"
-                            variant="outlined"
-                        >
-							<CardContent className="app-card-content-style">
-								<ul className="app-ul-style">
-									<Typography
-										component="li"
-										align="center"
-									>
-										<AppsIcon className="app-app-icon-style" />
-									</Typography>
-								</ul>
-							</CardContent>
-                            <CardActions>
-                                <Button fullWidth={true} color="secondary" variant="outlined"
-                                    onClick={this.changeUrl} component={Link} to={"/{{namePlural}}"}>
-                                {{namePascalCase}}
-                                </Button>
-                            </CardActions>
-						</Card>
-                        {{/aggregates}}
-                        {{/boundedContexts}}
+						<Grid container spacing={2}>
+							{{#boundedContexts}}
+							{{#aggregates}}
+							<Card className="app-card-style"
+								variant="outlined"
+							>
+							<Grid item xs={12} sm={6} md={4} lg={3}>
+								<CardContent className="app-card-content-style">
+									<ul className="app-ul-style">
+										<Typography
+											component="li"
+											align="center"
+										>
+											<AppsIcon className="app-app-icon-style" />
+										</Typography>
+									</ul>
+								</CardContent>
+								<CardActions>
+									<Button fullWidth={true} color="secondary" variant="outlined"
+										onClick={this.changeUrl} component={Link} to={"/{{namePlural}}"}>
+									{{namePascalCase}}
+									</Button>
+								</CardActions>
+							</Card>
+							</Grid>
+							{{/aggregates}}
+							{{/boundedContexts}}
+						</Grid>
 					</Stack>
 				    )
 				}

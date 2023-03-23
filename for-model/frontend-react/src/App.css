@@ -9,6 +9,7 @@
     height:200px; 
     margin:20px;
     text-align:center;
+    padding-bottom:5px;
 }
 
 
@@ -26,6 +27,8 @@
 .app-app-icon-style {
     font-size: 60px;
     color: rgb(149, 117, 205);
+    position:relative;
+    top:-30px;
 }
   
 @media (min-width: 960px) {
