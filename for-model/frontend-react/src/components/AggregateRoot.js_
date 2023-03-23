@@ -174,13 +174,13 @@ import {{getEntityClassNameOfList className}}Manager from "./primitives/{{getEnt
                         <{{getPrimitiveType className}} name="{{nameCamelCase}}" label="{{nameCamelCase}}" onChange={this.props.onChange} value={this.props.value.{{nameCamelCase}}?this.props.value.{{nameCamelCase}}:""} editMode={this.props.editMode}/>
                     {{else}}
                         {{#checkVO className}}
-                        <{{className}} offline name="{{nameCamelCase}}" label="{{nameCamelCase}}" value={this.props.value.{{nameCamelCase}}?this.props.value.{{nameCamelCase}}:"" editMode={this.props.editMode}/>
+                        <{{className}} offline name="{{nameCamelCase}}" label="{{nameCamelCase}}" value={this.props.value.{{nameCamelCase}}?this.props.value.{{nameCamelCase}}:""} editMode={this.props.editMode}/>
                         {{/checkVO}}
                         {{#checkEntityMember className}}
-                        <{{className}} offline name="{{nameCamelCase}}" label="{{nameCamelCase}}" value={this.props.value.{{nameCamelCase}}?this.props.value.{{nameCamelCase}}:"" editMode={this.props.editMode}/>
+                        <{{className}} offline name="{{nameCamelCase}}" label="{{nameCamelCase}}" value={this.props.value.{{nameCamelCase}}?this.props.value.{{nameCamelCase}}:""} editMode={this.props.editMode}/>
                         {{/checkEntityMember}}
                         {{#checkListOfEntityMember className}}
-                        <{{getEntityClassNameOfList className}}Manager offline name="{{nameCamelCase}}" label="{{nameCamelCase}}" value={this.props.value.{{nameCamelCase}}?this.props.value.{{nameCamelCase}}:"" editMode={this.props.editMode}/>
+                        <{{getEntityClassNameOfList className}}Manager offline name="{{nameCamelCase}}" label="{{nameCamelCase}}" value={this.props.value.{{nameCamelCase}}?this.props.value.{{nameCamelCase}}:""} editMode={this.props.editMode}/>
                         {{/checkListOfEntityMember}}
                     {{/if}}
                     {{/if}}
