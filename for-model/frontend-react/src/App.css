@@ -4,16 +4,13 @@
   }
   
 .app-card-style {
-    width:300px;
-    height:300px; 
+    min-width:200px;
+    max-width:200px;
+    height:200px; 
     margin:20px;
     text-align:center;
 }
 
-.app-stack-style {
-    display: flex;
-    margin: 4px;
-}
 
 .app-card-content-style {
     text-align: center;
@@ -33,13 +30,10 @@
   
 @media (min-width: 960px) {
     .app-stack-style {
-        margin: 16px; /* md */
     }
 }
 
 @media (min-width: 768px) {
     .app-stack-style {
-        flex-direction: row; /* sm */
-        margin: 8px;
     }
 }

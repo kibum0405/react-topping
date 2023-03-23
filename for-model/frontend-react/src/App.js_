@@ -71,7 +71,7 @@ class App extends React.Component {
 					:
 				    (
 					<Stack className="app-stack-style"
-						justifyContent="center"
+						direction="row"
 					>
                         {{#boundedContexts}}
                         {{#aggregates}}
