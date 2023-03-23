@@ -76,10 +76,10 @@ class App extends React.Component {
 						<Grid container spacing={2}>
 							{{#boundedContexts}}
 							{{#aggregates}}
-							<Card className="app-card-style"
-								variant="outlined"
-							>
-								<Grid item xs={12} sm={6} md={4} lg={3}>
+							<Grid item xs={12} sm={6} md={4} lg={3}>
+								<Card className="app-card-style"
+									variant="outlined"
+								>
 									<CardContent className="app-card-content-style">
 										<ul className="app-ul-style">
 											<Typography
