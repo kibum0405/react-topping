@@ -2,92 +2,16 @@ forEach: Entity
 fileName: {{namePascalCase}}Chips.js
 path: frontend-react/src/components/listers
 ---
-import React, { useState } from 'react';
-import './Chips.css';
 
-const CustomComponent = ({
-  value,
-  namePascalCase,
-  editMode,
-  fieldDescriptors,
-  photoVO,
-  selectFile,
-  deleteItem,
-  append,
-  tick,
-  newValue,
-  edit,
-  remove
-}) => {
-  const [isExpansion, setIsExpansion] = useState(false);
-
-  return (
-    <div className="custom-component-margin">
-      {value.length > 0 && (
-        <div>
-          <button onClick={() => setIsExpansion(!isExpansion)}>
-            {namePascalCase}
-          </button>
-
-          {isExpansion &&
-            value.map((item, idx) => (
-              <div key={idx}>
-                <div>
-                  <h3>Message {idx + 1}</h3>
-                  <p>
-                    {photoVO(namePascalCase) && (
-                      <React.Fragment>
-                        <img
-                          className="custom-img"
-                          style={editMode ? { cursor: 'pointer' } : {}}
-                          src={
-                            item.imgFile
-                              ? item.imgFile
-                              : 'https://cdn.vuetifyjs.com/images/cards/cooking.png'
-                          }
-                          onClick={selectFile}
-                          alt=""
-                        />
-                        <br />
-                      </React.Fragment>
-                    )}
-                    {fieldDescriptors.map(descriptor => (
-                      <React.Fragment key={descriptor.namePascalCase}>
-                        {descriptor.namePascalCase} :{' '}
-                        {item[descriptor.nameCamelCase]} <br />
-                      </React.Fragment>
-                    ))}
-                  </p>
-                </div>
-                {editMode && (
-                  <button onClick={() => deleteItem(item)}>
-                    <i className="mdi mdi-delete custom-icon" />
-                  </button>
-                )}
-              </div>
-            ))}
-        </div>
-      )}
-
-      {editMode && tick && (
-        <div>
-          {/* 다른 컴포넌트를 사용하십시오. */}
-          <div>
-            <div className="spacer" />
-            <button className="deep-purple-btn" onClick={edit}>
-              {!editMode ? 'Edit' : 'Add'}
-            </button>
-            {!editMode && (
-              <button className="deep-purple-btn" onClick={remove}>
-                Delete
-              </button>
-            )}
-          </div>
-        </div>
-      )}
-    </div>
-  );
-};
-
-export default CustomComponent;
-
+class {{namePascalCase}}Cards extends React.Component {
+  render() {
+        const titleStyle = { marginLeft:"4%", marginTop:"10px" }
+        // const Transition = React.forwardRef(function Transition(props, ref) {
+        //     return <Slide direction="up" ref={ref} {...props} />;
+        // });
+        return (
+            <div>
+            </div>
+        )
+  }
+}
