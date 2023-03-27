@@ -60,7 +60,7 @@ class App extends React.Component {
 							changeUrl={this.changeUrl}/>
             <Grid item lg={8}>
 				{
-                    this.state.urlPath && this.state.isCheckUrl === true ?
+                    this.state.urlPath ?
                     <Routes>
                         {{#boundedContexts}}
                         {{#aggregates}}
