@@ -4,6 +4,7 @@
 
 .aggre-gate-root-typography-style {
     margin-bottom: 1.5rem;
+    width:240px;
 }
 
 .aggre-gate-root-grid-style {
@@ -21,4 +22,8 @@
 
 .aggre-gate-root-card-style {
     max-width:100%;
+}
+
+.card-layout {
+    width:300px;
 }

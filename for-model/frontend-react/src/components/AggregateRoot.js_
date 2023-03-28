@@ -154,50 +154,52 @@ import {{getEntityClassNameOfList className}}Manager from "./primitives/{{getEnt
     render(){
         const card = (
             <React.Fragment>
-                <CardHeader
-                    title={
-                        this.props.value && this.props.value._links?
-                        <Typography variant="h5" component="div">
-                            {{namePascalCase}} # {this.props.value._links.self.href.split("/")[this.props.value._links.self.href.split("/").length - 1]}
-                        </Typography>:
-                        <Typography variant="h5" component="div">
-                            {{namePascalCase}}
-                        </Typography>
-                    }
-                />
+                <Card className="card-layout" variant="outlined">
+                    <CardHeader
+                        title={
+                            this.props.value && this.props.value._links?
+                            <Typography variant="h5" component="div">
+                                {{namePascalCase}} # {this.props.value._links.self.href.split("/")[this.props.value._links.self.href.split("/").length - 1]}
+                            </Typography>:
+                            <Typography variant="h5" component="div">
+                                {{namePascalCase}}
+                            </Typography>
+                        }
+                    />
 
-                <CardContent className="aggre-gate-root-card-content-style">
-                    <Typography className="aggre-gate-root-typography-style" color="text.secondary">
-                    {{#aggregateRoot.fieldDescriptors}}
-                    {{#if (isNotId nameCamelCase)}}
-                    {{#if (isPrimitive className)}}
-                        <{{getPrimitiveType className}} name="{{nameCamelCase}}" label="{{nameCamelCase}}" onChange={this.props.onChange} value={this.props.value.{{nameCamelCase}}?this.props.value.{{nameCamelCase}}:""} editMode={this.props.editMode}/>
-                    {{else}}
-                        {{#checkVO className}}
-                        <{{className}} offline name="{{nameCamelCase}}" label="{{nameCamelCase}}" value={this.props.value.{{nameCamelCase}}?this.props.value.{{nameCamelCase}}:""} editMode={this.props.editMode}/>
-                        {{/checkVO}}
-                        {{#checkEntityMember className}}
-                        <{{className}} offline name="{{nameCamelCase}}" label="{{nameCamelCase}}" value={this.props.value.{{nameCamelCase}}?this.props.value.{{nameCamelCase}}:""} editMode={this.props.editMode}/>
-                        {{/checkEntityMember}}
-                        {{#checkListOfEntityMember className}}
-                        <{{getEntityClassNameOfList className}}Manager offline name="{{nameCamelCase}}" label="{{nameCamelCase}}" value={this.props.value.{{nameCamelCase}}?this.props.value.{{nameCamelCase}}:""} editMode={this.props.editMode}/>
-                        {{/checkListOfEntityMember}}
-                    {{/if}}
-                    {{/if}}
-                    {{/aggregateRoot.fieldDescriptors}}
-                    </Typography>
-                </CardContent>
-                <CardActions>
-                    <Grid className="aggre-gate-root-grid-style">
-                        <Grid item xs />
-                        <Grid item>
-                            {!this.props.editMode?<Button onClick={()=>this.edit(true)} size="small">Edit</Button>:""}
-                            {this.props.editMode?<Button onClick={this.save} size="small">Save</Button>:""}
-                            {!this.props.editMode?<Button onClick={this.remove} size="small">Delete</Button>:""}
-                            {this.props.editMode && !this.props.isNew?<Button onClick={()=>this.edit(false)} size="small">Cancel</Button>:""}
+                    <CardContent className="aggre-gate-root-card-content-style">
+                        <Typography className="aggre-gate-root-typography-style" color="text.secondary">
+                        {{#aggregateRoot.fieldDescriptors}}
+                        {{#if (isNotId nameCamelCase)}}
+                        {{#if (isPrimitive className)}}
+                            <{{getPrimitiveType className}} name="{{nameCamelCase}}" label="{{nameCamelCase}}" onChange={this.props.onChange} value={this.props.value.{{nameCamelCase}}?this.props.value.{{nameCamelCase}}:""} editMode={this.props.editMode}/>
+                        {{else}}
+                            {{#checkVO className}}
+                            <{{className}} offline name="{{nameCamelCase}}" label="{{nameCamelCase}}" value={this.props.value.{{nameCamelCase}}?this.props.value.{{nameCamelCase}}:""} editMode={this.props.editMode}/>
+                            {{/checkVO}}
+                            {{#checkEntityMember className}}
+                            <{{className}} offline name="{{nameCamelCase}}" label="{{nameCamelCase}}" value={this.props.value.{{nameCamelCase}}?this.props.value.{{nameCamelCase}}:""} editMode={this.props.editMode}/>
+                            {{/checkEntityMember}}
+                            {{#checkListOfEntityMember className}}
+                            <{{getEntityClassNameOfList className}}Manager offline name="{{nameCamelCase}}" label="{{nameCamelCase}}" value={this.props.value.{{nameCamelCase}}?this.props.value.{{nameCamelCase}}:""} editMode={this.props.editMode}/>
+                            {{/checkListOfEntityMember}}
+                        {{/if}}
+                        {{/if}}
+                        {{/aggregateRoot.fieldDescriptors}}
+                        </Typography>
+                    </CardContent>
+                    <CardActions>
+                        <Grid className="aggre-gate-root-grid-style">
+                            <Grid item xs />
+                            <Grid item>
+                                {!this.props.editMode?<Button onClick={()=>this.edit(true)} size="small">Edit</Button>:""}
+                                {this.props.editMode?<Button onClick={this.save} size="small">Save</Button>:""}
+                                {!this.props.editMode?<Button onClick={this.remove} size="small">Delete</Button>:""}
+                                {this.props.editMode && !this.props.isNew?<Button onClick={()=>this.edit(false)} size="small">Cancel</Button>:""}
+                            </Grid>
                         </Grid>
-                    </Grid>
-                </CardActions>
+                    </CardActions>
+                </Card>
                 {!this.props.editMode?
                     <CardActions>
                         <Grid container className="aggre-gate-root-grid-style">
