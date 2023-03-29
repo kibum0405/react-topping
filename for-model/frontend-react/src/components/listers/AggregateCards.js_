@@ -104,7 +104,7 @@ class {{namePascalCase}}Cards extends React.Component {
         //     return <Slide direction="up" ref={ref} {...props} />;
         // });
         return (
-            <div>
+            <div className="all-card-layout">
                 <Stack
                     direction="column"
                     justifyContent="flex-start"
@@ -150,10 +150,10 @@ class {{namePascalCase}}Cards extends React.Component {
                     alignItems="center"
                     spacing={2}
                 >
-                    <Grid className="index-card-grid2" container columns={this.state.values.length*4>=16?16:this.state.values.length*4}>
+                    <Grid container>
                         {this.state.values.map((value,index) => {
                             return (
-                                <Grid item xs={4} key={index}>
+                                <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
                                     <{{namePascalCase}} offline={this.state.offline} keyIndex={index} onChange={this.handleListChange.bind(this, index)} editMode={value.editMode}
                                           append={this.append} edit={this.edit} value={value} delete={this.remove} handleProps={this.handleProps} handleClose={this.handleClose}/>
                                 </Grid>

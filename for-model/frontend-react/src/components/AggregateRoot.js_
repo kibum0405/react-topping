@@ -221,8 +221,8 @@ import {{getEntityClassNameOfList className}}Manager from "./primitives/{{getEnt
         );
         return (
             <div>
-                <Container className="aggre-gate-root-container-style">
-                    <Card class="aggre-gate-root-card-style" variant={this.props.keyIndex>=0?"outlined":""}>{card}</Card>
+                <Container>
+                    <Card variant={this.props.keyIndex>=0?"outlined":""}>{card}</Card>
                 </Container>
             </div>
         )}
